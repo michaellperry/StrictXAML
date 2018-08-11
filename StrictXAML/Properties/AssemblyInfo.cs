@@ -8,9 +8,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("StrictXAML")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("XAML controls that follow strict guidelines to fix common issues.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Michael L Perry")]
 [assembly: AssemblyProduct("StrictXAML")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
