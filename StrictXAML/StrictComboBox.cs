@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -17,16 +16,14 @@ namespace StrictXAML
         }
 
         public static readonly DependencyProperty StrictSelectedItemProperty =
-            DependencyProperty.Register("StrictSelectedItem", typeof(object), typeof(StrictComboBox), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, StrictSelectedItemChanged));
-
-        public IEnumerable StrictItemsSource
-        {
-            get { return (IEnumerable)GetValue(StrictItemsSourceProperty); }
-            set { SetValue(StrictItemsSourceProperty, value); }
-        }
-
-        public static readonly DependencyProperty StrictItemsSourceProperty =
-            DependencyProperty.Register("StrictItemsSource", typeof(IEnumerable), typeof(StrictComboBox), new PropertyMetadata(null, StrictItemsSourceChanged));
+            DependencyProperty.Register(
+                "StrictSelectedItem",
+                typeof(object),
+                typeof(StrictComboBox),
+                new FrameworkPropertyMetadata(
+                    null,
+                    FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                    StrictSelectedItemChanged));
 
 
         static StrictComboBox()
@@ -73,12 +70,6 @@ namespace StrictXAML
                     _this._applicationInitiated = false;
                 }
             }
-        }
-
-        private static void StrictItemsSourceChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var _this = (StrictComboBox)d;
-            _this.ItemsSource = (IEnumerable)e.NewValue;
         }
 
         private void QueueRestoreValidState()
