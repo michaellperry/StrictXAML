@@ -1,18 +1,21 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using System.Windows.Controls;
 
 namespace StrictXAML
 {
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public class StrictComboBox : ComboBox
     {
-        private bool _userInitiated = false;
-        private bool _applicationInitiated = false;
+        private bool _userInitiated;
+        private bool _applicationInitiated;
 
+        [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
         public object StrictSelectedItem
         {
-            get { return GetValue(StrictSelectedItemProperty); }
-            set { SetValue(StrictSelectedItemProperty, value); }
+            get => GetValue(StrictSelectedItemProperty);
+            set => SetValue(StrictSelectedItemProperty, value);
         }
 
         public static readonly DependencyProperty StrictSelectedItemProperty =
@@ -58,17 +61,15 @@ namespace StrictXAML
         private static void StrictSelectedItemChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var _this = (StrictComboBox)d;
-            if (!_this._userInitiated)
+            if (_this._userInitiated) return;
+            try
             {
-                try
-                {
-                    _this._applicationInitiated = true;
-                    _this.SelectedItem = e.NewValue;
-                }
-                finally
-                {
-                    _this._applicationInitiated = false;
-                }
+                _this._applicationInitiated = true;
+                _this.SelectedItem = e.NewValue;
+            }
+            finally
+            {
+                _this._applicationInitiated = false;
             }
         }
 
