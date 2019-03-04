@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrictXAML", "StrictXAML\StrictXAML.csproj", "{684B78DA-AFAC-49B2-A898-0516BD5BF838}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrictXAML.Xamarin.Forms", "StrictXAML.Xamarin.Forms\StrictXAML.Xamarin.Forms.csproj", "{C54EC968-9A66-4105-8790-2CBDEC7B6001}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{684B78DA-AFAC-49B2-A898-0516BD5BF838}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{684B78DA-AFAC-49B2-A898-0516BD5BF838}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{684B78DA-AFAC-49B2-A898-0516BD5BF838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C54EC968-9A66-4105-8790-2CBDEC7B6001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54EC968-9A66-4105-8790-2CBDEC7B6001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54EC968-9A66-4105-8790-2CBDEC7B6001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54EC968-9A66-4105-8790-2CBDEC7B6001}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

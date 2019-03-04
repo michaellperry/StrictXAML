@@ -1,12 +1,17 @@
-﻿using System;
+using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Windows;
-using System.Windows.Controls;
+using Xamarin.Forms;
+using StrictComboBox = StrictXAML.Xamarin.Forms.StrictPicker;
+using Dispatcher = Xamarin.Forms.Device;
+using ComboBox = Xamarin.Forms.Picker;
+using DependencyProperty = Xamarin.Forms.BindableProperty;
+using DependencyObject = Xamarin.Forms.BindableObject;
+using SelectionChangedEventArgs = System.EventArgs;
 
-namespace StrictXAML
+namespace StrictXAML.Xamarin.Forms
 {
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    public class StrictComboBox : ComboBox
+    public class StrictPicker : Picker
     {
         private bool _userInitiated;
         private bool _applicationInitiated;
@@ -18,32 +23,24 @@ namespace StrictXAML
             set => SetValue(StrictSelectedItemProperty, value);
         }
 
+
         public static readonly DependencyProperty StrictSelectedItemProperty =
-            DependencyProperty.Register(
-                "StrictSelectedItem",
+            DependencyProperty.Create(
+                nameof(StrictSelectedItem),
                 typeof(object),
-                typeof(StrictComboBox),
-                new FrameworkPropertyMetadata(
-                    null,
-                    FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
-                    StrictSelectedItemChanged));
+                typeof(StrictComboBox), null, BindingMode.TwoWay,
+                propertyChanged: StrictSelectedItemChanged);
 
-
-        static StrictComboBox()
+        protected override void OnPropertyChanged(string propertyName = null)
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(StrictComboBox), new FrameworkPropertyMetadata(typeof(ComboBox)));
-        }
-
-        protected override void OnSelectionChanged(SelectionChangedEventArgs e)
-        {
-            if (!_applicationInitiated)
+            if (!_applicationInitiated && propertyName == nameof(SelectedItem))
             {
-                if (e.AddedItems.Count > 0)
+                if (SelectedItem != null)
                 {
                     try
                     {
                         _userInitiated = true;
-                        StrictSelectedItem = e.AddedItems[0];
+                        StrictSelectedItem = SelectedItem;
                     }
                     finally
                     {
@@ -55,17 +52,18 @@ namespace StrictXAML
                     QueueRestoreValidState();
                 }
             }
-            base.OnSelectionChanged(e);
+
+            base.OnPropertyChanged(propertyName);
         }
 
-        private static void StrictSelectedItemChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void StrictSelectedItemChanged(DependencyObject d, object oldValue, object eNewValue)
         {
             var _this = (StrictComboBox)d;
             if (_this._userInitiated) return;
             try
             {
                 _this._applicationInitiated = true;
-                _this.SelectedItem = e.NewValue;
+                _this.SelectedItem = eNewValue;
             }
             finally
             {
@@ -73,9 +71,10 @@ namespace StrictXAML
             }
         }
 
+        [SuppressMessage("ReSharper", "RedundantDelegateCreation")]
         private void QueueRestoreValidState()
         {
-            Dispatcher.BeginInvoke(new Action(() =>
+            Dispatcher.BeginInvokeOnMainThread(new Action(() =>
             {
                 try
                 {
