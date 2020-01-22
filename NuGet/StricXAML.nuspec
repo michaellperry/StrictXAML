@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>StrictXAML</id>
+    <version>1.1.0</version>
+    <title>StrictXAML</title>
+    <authors>Michael L Perry</authors>
+    <owners>Michael L Perry</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/michaellperry/StrictXAML/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>XAML controls that follow strict guidelines to fix common issues.</description>
+    <copyright>Copyright 2019</copyright>
+    <tags>XAML WPF Xamarin.Forms</tags>
+  </metadata>
+  <files>
+    <file src="..\StrictXAML\bin\Release\StrictXAML.dll" target="lib\net45\StrictXAML.dll" />
+    <file src="..\StrictXAML.Xamarin.Forms\bin\Release\netstandard2.0\StrictXAML.Xamarin.Forms.dll" target="lib\netstandard2.0\StrictXAML.dll" />
+  </files>
+</package>
