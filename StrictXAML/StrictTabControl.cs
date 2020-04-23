@@ -18,6 +18,12 @@ namespace StrictXAML
             set => SetValue(StrictSelectedItemProperty, value);
         }
 
+        public object StrictSelectedValue
+        {
+            get => GetValue(StrictSelectedValueProperty);
+            set => SetValue(StrictSelectedValueProperty, value);
+        }
+
         public static readonly DependencyProperty StrictSelectedItemProperty =
             DependencyProperty.Register(
                 "StrictSelectedItem",
@@ -28,6 +34,30 @@ namespace StrictXAML
                     FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
                     StrictSelectedItemChanged));
 
+        public static readonly DependencyProperty StrictSelectedValueProperty =
+            DependencyProperty.Register(
+                "StrictSelectedValue",
+                typeof(object),
+                typeof(StrictTabControl),
+                new FrameworkPropertyMetadata(
+                    null,
+                    FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                    StrictSelectedValueChanged));
+
+        private static void StrictSelectedValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var _this = (StrictTabControl)d;
+            if (_this._userInitiated) return;
+            try
+            {
+                _this._applicationInitiated = true;
+                _this.SelectedValue = e.NewValue;
+            }
+            finally
+            {
+                _this._applicationInitiated = false;
+            }
+        }
 
         static StrictTabControl()
         {
@@ -55,6 +85,7 @@ namespace StrictXAML
                     QueueRestoreValidState();
                 }
             }
+
             base.OnSelectionChanged(e);
         }
 
@@ -81,6 +112,7 @@ namespace StrictXAML
                 {
                     _applicationInitiated = true;
                     SelectedItem = StrictSelectedItem;
+                    SelectedValue = StrictSelectedValue;
                 }
                 finally
                 {
