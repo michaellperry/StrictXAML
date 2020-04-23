@@ -75,7 +75,7 @@ namespace StrictXAML
                         _userInitiated = true;
                         var strictSelectedItem = e.AddedItems[0];
                         StrictSelectedItem = strictSelectedItem;
-                        StrictSelectedValue = strictSelectedItem.GetType().GetProperty(SelectedValuePath).GetValue(strictSelectedItem);
+                        StrictSelectedValue = SelectedValue;
                     }
                     finally
                     {
