@@ -73,8 +73,7 @@ namespace StrictXAML
                     try
                     {
                         _userInitiated = true;
-                        var strictSelectedItem = e.AddedItems[0];
-                        StrictSelectedItem = strictSelectedItem;
+                        StrictSelectedItem = e.AddedItems[0];
                         StrictSelectedValue = SelectedValue;
                     }
                     finally
