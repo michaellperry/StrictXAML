@@ -32,7 +32,10 @@ namespace StrictXAML
         static StrictComboBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(StrictComboBox), new FrameworkPropertyMetadata(typeof(ComboBox)));
+            SelectedItemProperty.OverrideMetadata(typeof(StrictComboBox), new FrameworkPropertyMetadata(null, null, CoerceValueCallback));
         }
+
+        private static object CoerceValueCallback(DependencyObject o, object value) => value;
 
         protected override void OnSelectionChanged(SelectionChangedEventArgs e)
         {
