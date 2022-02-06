@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 using System.Windows;
 using System.Windows.Controls;
@@ -32,6 +33,15 @@ namespace StrictXAML
         static StrictComboBox()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(StrictComboBox), new FrameworkPropertyMetadata(typeof(ComboBox)));
+            SelectedItemProperty.OverrideMetadata(typeof(StrictComboBox), new FrameworkPropertyMetadata(null, null, CoerceValueCallback));
+        }
+
+        private static object CoerceValueCallback(DependencyObject o, object value) => value;
+
+        protected override void OnItemsChanged(NotifyCollectionChangedEventArgs e)
+        {
+            if (e.Action == NotifyCollectionChangedAction.Add) QueueRestoreValidState();
+            base.OnItemsChanged(e);
         }
 
         protected override void OnSelectionChanged(SelectionChangedEventArgs e)
