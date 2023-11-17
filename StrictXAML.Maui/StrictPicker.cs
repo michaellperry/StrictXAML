@@ -62,10 +62,9 @@ namespace StrictXAML.Maui
             }
         }
 
-        [SuppressMessage("ReSharper", "RedundantDelegateCreation")]
         private void QueueRestoreValidState()
         {
-            Dispatcher.Dispatch(new Action(() =>
+            Dispatcher.Dispatch(() =>
             {
                 try
                 {
@@ -76,7 +75,7 @@ namespace StrictXAML.Maui
                 {
                     _applicationInitiated = false;
                 }
-            }));
+            });
         }
     }
 }
