@@ -7,7 +7,6 @@ namespace StrictXAML.Maui
         private bool _userInitiated;
         private bool _applicationInitiated;
 
-        [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
         public object StrictSelectedItem
         {
             get => GetValue(StrictSelectedItemProperty);
