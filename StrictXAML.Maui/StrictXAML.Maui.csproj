@@ -16,6 +16,8 @@
         <Description>XAML controls that follow strict guidelines to fix common issues.</Description>
         <Copyright>Copyright 2024</Copyright>
         <PackageTags>XAML MAUI</PackageTags>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
 
     <ItemGroup>
