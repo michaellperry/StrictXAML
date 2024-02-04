@@ -1,18 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrictXAML", "StrictXAML\StrictXAML.csproj", "{684B78DA-AFAC-49B2-A898-0516BD5BF838}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrictXAML", "StrictXAML\StrictXAML.csproj", "{684B78DA-AFAC-49B2-A898-0516BD5BF838}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrictXAML.Xamarin.Forms", "StrictXAML.Xamarin.Forms\StrictXAML.Xamarin.Forms.csproj", "{C54EC968-9A66-4105-8790-2CBDEC7B6001}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{60FCE95A-FD2A-4DD3-889D-F62CDCD75087}"
-	ProjectSection(SolutionItems) = preProject
-		NuGet\StricXAML.nuspec = NuGet\StricXAML.nuspec
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrictXAML.Maui", "StrictXAML.Maui\StrictXAML.Maui.csproj", "{B15D3E38-2165-427D-B19F-66EF1CC5ECB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrictXAML.Maui", "StrictXAML.Maui\StrictXAML.Maui.csproj", "{B15D3E38-2165-427D-B19F-66EF1CC5ECB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
