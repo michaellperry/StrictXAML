@@ -12,7 +12,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>XAML controls that follow strict guidelines to fix common issues.</Description>
     <Copyright>Copyright 2024</Copyright>
-    <PackageTags>XAML WPF Xamarin.Forms</PackageTags>
+    <PackageTags>XAML WPF</PackageTags>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
