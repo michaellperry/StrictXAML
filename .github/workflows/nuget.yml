@@ -25,8 +25,8 @@ jobs:
       run: dotnet restore
     - name: Pack
       run: |
-        dotnet pack ./StrictXAML/ -c Release -o ./packages
-        dotnet pack ./StrictXAML.XamarinForms/ -c Release -o ./packages
-        dotnet pack ./StrictXAML.Maui/ -c Release -o ./packages
+        dotnet pack .\StrictXAML\ -c Release -o .\packages
+        dotnet pack .\StrictXAML.XamarinForms\ -c Release -o .\packages
+        dotnet pack .\StrictXAML.Maui\ -c Release -o .\packages
     - name: Publish packages to NuGet registry
-      run: dotnet nuget push ./packages/*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
+      run: dotnet nuget push .\packages\*.nupkg -k ${{secrets.NUGET_API_KEY}} -s https://api.nuget.org/v3/index.json --skip-duplicate
