@@ -4,14 +4,14 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <OutputType>Library</OutputType>
         <PackageId>StrictXAML.Xamarin.Forms</PackageId>
-        <Version>1.3.0</Version>
+        <Version>1.4.0</Version>
         <Title>StrictXAML.Xamarin.Forms</Title>
         <Authors>Michael L Perry</Authors>
         <PackageProjectUrl>https://github.com/michaellperry/StrictXAML/</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <Description>XAML controls that follow strict guidelines to fix common issues.</Description>
-        <Copyright>Copyright 2024</Copyright>
+        <Copyright>Copyright 2025</Copyright>
         <PackageTags>XAML Xamarin.Forms</PackageTags>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>

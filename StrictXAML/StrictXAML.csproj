@@ -4,14 +4,14 @@
     <TargetFrameworks>net45;netcoreapp3.1;net5.0-windows;net6.0-windows;net7.0-windows;net8.0-windows</TargetFrameworks>
     <OutputType>Library</OutputType>
     <PackageId>StrictXAML</PackageId>
-    <Version>1.3.0</Version>
+    <Version>1.4.0</Version>
     <Title>StrictXAML</Title>
     <Authors>Michael L Perry</Authors>
     <PackageProjectUrl>https://github.com/michaellperry/StrictXAML/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>XAML controls that follow strict guidelines to fix common issues.</Description>
-    <Copyright>Copyright 2024</Copyright>
+    <Copyright>Copyright 2025</Copyright>
     <PackageTags>XAML WPF</PackageTags>
     <UseWPF>true</UseWPF>
     <IncludeSymbols>true</IncludeSymbols>
